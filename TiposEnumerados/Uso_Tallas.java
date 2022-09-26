@@ -48,7 +48,6 @@ class Talla2{
         public static void main(String[] args) {
             Scanner entrada = new Scanner(System.in);
 
-            System.out.println("Pueba git");
             System.out.println("Escribe una talla: MINI, MEDIANO, GRANDE, MUY GRANDE");
 
             String entrada_datos = entrada.next().toUpperCase();    // Pasamos a MAYUSCULAS lo que el usuario pueda
@@ -62,5 +61,4 @@ class Talla2{
             System.out.println("Abreviatura = " + la_talla.dameAbreviatura());
         }
 
-        //Prueba git
 }
