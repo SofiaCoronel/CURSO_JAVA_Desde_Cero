@@ -1,4 +1,4 @@
-package Excepciones.Try_Catch.Entrada;
+package Excepciones.Try_Catch;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -50,5 +50,4 @@ public class Entrada_datos {
         System.out.println("Hemos termianndo");
     }
 
-    // PRUEBA PUSH DESDE INTELLIJ
 }

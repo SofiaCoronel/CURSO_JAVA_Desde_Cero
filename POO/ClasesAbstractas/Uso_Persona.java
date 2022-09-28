@@ -31,7 +31,6 @@ abstract class Persona {
 
     private String nombre;
 
-
 }
 
 class Empleado2 extends Persona {

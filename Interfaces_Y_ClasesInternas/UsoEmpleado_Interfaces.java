@@ -15,13 +15,11 @@ public class UsoEmpleado_Interfaces {
         misEmpleados[0] = new Empleado("Sofia Luna", 85000, 2018, 12, 17);
         misEmpleados[1] = new Empleado("Abril Coronel", 83500, 2015, 5, 9);
         misEmpleados[2] = new Empleado("Emilio Coronel", 120000, 2010, 1, 24);
-
         misEmpleados[3] = new Empleado("Antonio Fernandez");  // llamamos al 2do constructor
-
         misEmpleados[4] = jefe_RRHH;
-
         misEmpleados[5] = new Jefe("Maria", 97000, 2016, 05, 15);
 
+        System.out.println(jefe_RRHH.tomar_decisiones("Dar mas dias de vacaciones a los empleados"));   // Imprimimos la interfaz TOMAR DECISIONES
 
         for (Empleado e: misEmpleados){     //subimos el sueldo
             e.subeSueldo(5);
@@ -46,7 +44,6 @@ class Empleado implements Comparable {    // 1er constructor
         altaContrato = calendario.getTime();
 
     }
-
 
     //creamos el 2do constructor
     public Empleado(String nom){
@@ -88,12 +85,17 @@ class Empleado implements Comparable {    // 1er constructor
 
 }
 
-class Jefe extends Empleado {
+class Jefe extends Empleado implements Jefes {
     public Jefe(String nombre, double sueldo, int anio, int mes, int dia){
 
         super(nombre, sueldo, anio, mes, dia);
 
     }
+
+    public String tomar_decisiones(String decision){    // desarrollamos el metodo de la interfaz
+        return "Un miembro de la direccion ha tomado la decision de: " + decision;
+    }
+
     public void establece_incentivo(double b){
 
         incentivo = b;

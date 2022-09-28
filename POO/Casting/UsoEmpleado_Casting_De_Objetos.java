@@ -1,4 +1,4 @@
-package POO.Herencia.Casting;
+package POO.Casting;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -43,6 +43,7 @@ class Empleado{    // 1er constructor
         altaContrato = calendario.getTime();
 
     }
+
 
     //SOBRECARGA
     //creamos el 2do constructor
