@@ -1,6 +1,6 @@
 package ClasePracticaPrimerPrcialLab2.P3_Personal;
 
-public class Empleado {
+public class Empleado extends Persona{
 
     private String nombre;
     private String apellido;
@@ -8,11 +8,7 @@ public class Empleado {
     private double sueldo;
 
     public Empleado(String nombre, String apellido, int dni, double sueldo){
-        this.nombre = nombre;
-    }
-
-    public Empleado(String nom) {
-        nombre = nom;
+        super(nombre, apellido, dni, sueldo);
     }
 
     public String dameNombre(){
@@ -24,7 +20,8 @@ public class Empleado {
         sueldo += aumento;
     }
 
-    public double verSueldo(){
-        return sueldo;
+    @Override
+    public void verSueldo(double sueldo) {
+        System.out.println(sueldo);
     }
 }

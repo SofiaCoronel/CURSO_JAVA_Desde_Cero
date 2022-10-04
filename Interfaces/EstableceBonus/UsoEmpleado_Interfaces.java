@@ -1,4 +1,6 @@
-package Interfaces_Y_ClasesInternas;
+package Interfaces.EstableceBonus;
+
+import Interfaces.TomarDecisiones.Jefes;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -7,8 +9,8 @@ import java.util.GregorianCalendar;
 public class UsoEmpleado_Interfaces {
     public static void main(String[] args) {
 
-        Jefe jefe_RRHH = new Jefe("Juan", 96500.0,2022,07,25);
-        jefe_RRHH.establece_incentivo(4570.0);
+        Jefatura jefatura_RRHH = new Jefatura("Juan", 96500.0,2022,07,25);
+        jefatura_RRHH.establece_incentivo(4570.0);
 
         Empleado[] misEmpleados = new Empleado[6];
 
@@ -16,10 +18,17 @@ public class UsoEmpleado_Interfaces {
         misEmpleados[1] = new Empleado("Abril Coronel", 83500, 2015, 5, 9);
         misEmpleados[2] = new Empleado("Emilio Coronel", 120000, 2010, 1, 24);
         misEmpleados[3] = new Empleado("Antonio Fernandez");  // llamamos al 2do constructor
-        misEmpleados[4] = jefe_RRHH;
-        misEmpleados[5] = new Jefe("Maria", 97000, 2016, 05, 15);
+        misEmpleados[4] = jefatura_RRHH;
+        misEmpleados[5] = new Jefatura("Maria", 97000, 2016, 05, 15);
 
-        System.out.println(jefe_RRHH.tomar_decisiones("Dar mas dias de vacaciones a los empleados"));   // Imprimimos la interfaz TOMAR DECISIONES
+        System.out.println(jefatura_RRHH.tomar_decisiones("Dar mas dias de vacaciones a los empleados"));   // Imprimimos la interfaz TOMAR DECISIONES
+
+        // establecemos BONUS al JEFE
+        System.out.println("El jefe "+ jefatura_RRHH.dameNombre() + " tiene bonus de: "
+        + jefatura_RRHH.establece_bonus(500));
+
+        // establecemos BONUS a EMPLEADO
+        System.out.println(misEmpleados[3].dameNombre() + " tiene un bonus de: " + misEmpleados[3].establece_bonus(200));
 
         for (Empleado e: misEmpleados){     //subimos el sueldo
             e.subeSueldo(5);
@@ -36,13 +45,19 @@ public class UsoEmpleado_Interfaces {
 
     }
 }
-class Empleado implements Comparable {    // 1er constructor
+class Empleado implements Comparable, Trabajadores{    // 1er constructor
     public Empleado(String nom, double sue, int anio, int mes, int dia){
         nombre = nom;
         sueldo = sue;
         GregorianCalendar calendario = new GregorianCalendar(anio, mes-1, dia);
         altaContrato = calendario.getTime();
 
+    }
+
+    // desarrollamos el metodo de la interfaz TRABAJADORES
+    @Override
+    public double establece_bonus(double gratificacion) {
+        return Trabajadores.bonus_base + gratificacion;
     }
 
     //creamos el 2do constructor
@@ -58,7 +73,6 @@ class Empleado implements Comparable {    // 1er constructor
         return sueldo;
     }
     public Date dameFechaContrato(){    //GETTER
-
         return altaContrato;
     }
 
@@ -69,8 +83,7 @@ class Empleado implements Comparable {    // 1er constructor
 
     public int compareTo(Object miObjeto){
         // CASTING
-        Empleado otroEmpleado = (Empleado) miObjeto;    // permite compara el sueldo de un empleado con otro.
-
+        Empleado otroEmpleado = (Empleado) miObjeto;    // permite comparar el sueldo de un empleado con otro.
         if (this.sueldo < otroEmpleado.sueldo){
             return -1;
         }
@@ -85,19 +98,25 @@ class Empleado implements Comparable {    // 1er constructor
 
 }
 
-class Jefe extends Empleado implements Jefes {
-    public Jefe(String nombre, double sueldo, int anio, int mes, int dia){
-
+class Jefatura extends Empleado implements Jefes {
+    public Jefatura(String nombre, double sueldo, int anio, int mes, int dia){
         super(nombre, sueldo, anio, mes, dia);
-
     }
 
     public String tomar_decisiones(String decision){    // desarrollamos el metodo de la interfaz
         return "Un miembro de la direccion ha tomado la decision de: " + decision;
     }
 
-    public void establece_incentivo(double b){
+    // desarrollamos el metodo de la interfaz TRABAJADORES
+    @Override
+    public double establece_bonus(double gratificacion){
+        double prima = 2000;
+        return Trabajadores.bonus_base + gratificacion + prima;
+        // devuelve el valor de BONUS_BASE + el valor que le pasemos por parametro a GRATIFICACION
+        // + la PRIMA-
+    }
 
+    public void establece_incentivo(double b){
         incentivo = b;
     }
 

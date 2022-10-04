@@ -1,6 +1,6 @@
 package ClasePracticaPrimerPrcialLab2.P3_Personal;
 
-public abstract class Persona {
+abstract class Persona {
 
     private String nombre;
     private String apellido;
@@ -8,10 +8,7 @@ public abstract class Persona {
     private double sueldo;
 
     public Persona(String nombre, String apellido, int dni, double sueldo){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.sueldo = sueldo;
+
     }
 
     public double getSueldoBasico() {

@@ -12,7 +12,7 @@ public class Jefe extends Empleado{
         porcentaje = incremento;
     }
     public double verSueldo(){
-        double sueldo_jefe = super.verSueldo();
+        double sueldo_jefe = verSueldo();
         return sueldo_jefe + porcentaje;
     }
 
