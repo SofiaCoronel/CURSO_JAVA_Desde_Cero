@@ -1,8 +1,5 @@
 package ClasePracticaPrimerPrcialLab2.P2_Cine;
 
-import ClasePracticaPrimerPrcialLab2.P2_Cine.Espectadores;
-/*
-
 public class Salas {
     private int capacidad;
     private String peli;
@@ -19,9 +16,28 @@ public class Salas {
     }
 
     public void setEspectadores(Espectadores[] espectadores) {
-if ()   }
-    public Espectadores[] getEspectadores() {
-        return espectadores;
+        if (espectadores.length > this.capacidad){
+            System.out.println("NO QUEDAN LUGARES DISPONIBLES");
+        }else {
+            this.espectadores = espectadores;
+        }
     }
 
-}*/
+    public String getEspectadores(){
+        try{
+            String listaEspectadores = "Lista de Espectadores: \n";
+            for (Espectadores espectador : this.espectadores){
+                listaEspectadores = listaEspectadores + espectador.toString();
+            }
+            return listaEspectadores;
+        }catch (Exception e){
+            return "No hay espectadores cargados";
+        }
+    }
+
+    public String toString(){
+        return "Sala: [Capacidad: " + capacidad +
+                       " - Pelicula: " + peli +
+                       " - Nombre: " + nombre;
+    }
+}

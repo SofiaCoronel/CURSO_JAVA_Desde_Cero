@@ -1,6 +1,6 @@
 package ClasePracticaPrimerPrcialLab2.P2_Cine;
 
-public abstract class Personas {
+public abstract class Personas implements Informaciones{
     private String nombre;
     private int dni;
 
@@ -20,8 +20,5 @@ public abstract class Personas {
         this.dni = dni;
     }
 
-    public abstract String getTipo();
-
-    public abstract String toString();
 
 }

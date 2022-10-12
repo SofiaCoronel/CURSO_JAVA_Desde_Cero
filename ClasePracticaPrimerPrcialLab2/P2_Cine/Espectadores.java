@@ -1,6 +1,6 @@
 package ClasePracticaPrimerPrcialLab2.P2_Cine;
 
-public class Espectadores extends Personas {
+public class Espectadores extends Personas implements Informaciones{
     private String fila;
     private int silla;
 
@@ -11,7 +11,7 @@ public class Espectadores extends Personas {
         this.silla = silla;
     }
 
-    public String getTipo(){
+    public String getName(){
         return "Espectador";
     }
 
@@ -21,7 +21,7 @@ public class Espectadores extends Personas {
 
     public String toString(){
         return "Nombre: " + super.getNombre() + "\n" + "DNI: " + super.getDni() +
-                "\n" + "Tipo: " + this.getTipo() + "\n" + "Butaca: " + this.getButaca() +
+                "\n" + "Tipo: " + this.getName() + "\n" + "Butaca: " + this.getButaca() +
                 "\n" + "-----------------------------------";
     }
 }
