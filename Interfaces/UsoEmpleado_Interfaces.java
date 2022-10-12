@@ -1,4 +1,4 @@
-package Interfaces_Y_ClasesInternas;
+package Interfaces;
 
 import java.util.Arrays;
 import java.util.Date;

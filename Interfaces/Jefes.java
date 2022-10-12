@@ -1,4 +1,4 @@
-package Interfaces_Y_ClasesInternas;
+package Interfaces;
 
 public interface Jefes {
     // implementamos el metodo TOMAR DECISIONES
