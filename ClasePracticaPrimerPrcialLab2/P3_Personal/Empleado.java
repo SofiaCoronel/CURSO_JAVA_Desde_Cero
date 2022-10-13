@@ -4,24 +4,20 @@ public class Empleado extends Persona{
 
     private String nombre;
     private String apellido;
-    private int dni;
     private double sueldo;
 
-    public Empleado(String nombre, String apellido, int dni, double sueldo){
-        super(nombre, apellido, dni, sueldo);
-    }
-
-    public String dameNombre(){
-        return nombre;
-    }
-
-    public void subirSueldo(double incremento) {
-        double aumento = sueldo * incremento / 100;
-        sueldo += aumento;
+    public Empleado(String nombre, String apellido, double sueldo){
+        super(nombre, apellido, sueldo);
     }
 
     @Override
-    public void verSueldo(double sueldo) {
-        System.out.println(sueldo);
+    public void subirSueldo(double incremento) {
+        double monto = super.getSueldoBasico() + incremento;
+        super.setSueldoBasico(monto);
+    }
+
+    @Override
+    double verSueldo(){
+        return super.getSueldoBasico();
     }
 }
