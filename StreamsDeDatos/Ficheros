@@ -1,7 +1,0 @@
-Cuando guardamos la informacion en una variable, esto lo guarda en la RAM (volatil)
-Si queremos almacenar la inf de manera permanente, lo tenemos que guardar en una memoria NO VOLATIL.
-La inf guardada de manera permanente esta almacenada en un Fichero.
-
-Forma de abordar los Streams:
-- Flujo de Bytes: enviarla --> InputStream y OutputStream
-- Flujo de Caracteres: lectura --> Reader y Writer
