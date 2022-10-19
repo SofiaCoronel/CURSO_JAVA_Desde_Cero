@@ -26,7 +26,7 @@ public class Jefe extends Persona{
 
     @Override
     public String toString(){
-        return super.toString() + "Porcentaje: " + this.porcentaje;
+        return super.toString() + "\nPorcentaje: " + this.porcentaje + "%";
     }
 
 }
