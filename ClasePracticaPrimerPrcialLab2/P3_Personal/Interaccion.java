@@ -28,7 +28,7 @@ public class Interaccion {
                             System.out.println("Ingrese el porcentaje: ");
                             double porcentaje = entrada.nextDouble();
 
-                            Jefe jefe = new Jefe(apellido, nombre, salario, porcentaje);
+                            Jefe1 jefe = new Jefe1(apellido, nombre, salario, porcentaje);
                             personas.addPersonas(jefe);
                         }
                         break;

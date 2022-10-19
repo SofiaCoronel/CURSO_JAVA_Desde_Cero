@@ -1,32 +1,30 @@
-package StreamsDeDatos.Lectura;
+package StreamsDeDatos.Buffers;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class Acceso_Fichero {
     public static void main(String[] args) {
 
         Leer_Fichero accediendo = new Leer_Fichero();
-        accediendo.lee();
+        accediendo.leer();
     }
 }
 
 class Leer_Fichero{
-
-    public void lee(){
+    public void leer(){
         try {
             FileReader entrada = new FileReader("C://prueba_fichero.txt");
 
+            BufferedReader miBuffer = new BufferedReader(entrada);  // almacenamos el fichero en el buffer
 
-            int c = entrada.read();
+            String linea = "";
 
-            while (c != -1){
+            while (linea != null){
 
-                c = entrada.read();
+                linea = miBuffer.readLine();    // almacena la primera linea que encuentre en el buffer
 
-                char letra = (char) c;
-
-                System.out.print(letra);
+                System.out.print(linea);
             }
             entrada.close();    // cerramos el flujo de datos
 
