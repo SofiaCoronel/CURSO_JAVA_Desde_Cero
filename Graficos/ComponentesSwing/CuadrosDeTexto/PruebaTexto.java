@@ -26,11 +26,8 @@ class MarcoTexto extends JFrame{
 class LaminaTexto extends JPanel{
     public LaminaTexto(){
 
-        JLabel texto1 = new JLabel("Email: ");  // colocamos una etiqueta
-        add(texto1);
-
-        campo1 = new JTextField(20);   // instanciamos un cuadro de texto
-        add(campo1);    // lo incluimos a la lamina
+        campo1 = new JTextField(20);  // colocamos una etiqueta
+        add(campo1);
 
         JButton miboton = new JButton("Comprobar");  // creamos el boton
         DameTexto mievento = new DameTexto();
@@ -42,24 +39,7 @@ class LaminaTexto extends JPanel{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
-            // validar la direccion de email
-            int correcto = 0;
-            String email = campo1.getText().trim();
-
-            for (int i=0; i < email.length(); i++){     // recorrer el String caracter a caracter
-                if (email.charAt(i) == '@'){    // verifica si el email ingresado tiene un solo arroba
-
-                    correcto ++;
-                }
-            }
-
-            if (correcto != 1){
-                System.out.println("Incorrecto");
-            }else {
-                System.out.println("Correcto");
-            }
-
+            System.out.println(campo1.getText().trim());
         }
     }
 
