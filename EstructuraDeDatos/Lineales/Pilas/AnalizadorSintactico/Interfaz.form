@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="EstructuraDeDatos.Lineales.Pilas.AnalizadorSintactico.Interfaz">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="88" y="20" width="432" height="132"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="82acf" class="javax.swing.JTextField" binding="txt_expresion">
+        <constraints/>
+        <properties>
+          <columns value="40"/>
+          <font size="18"/>
+        </properties>
+      </component>
+      <component id="a36b2" class="javax.swing.JButton" binding="validarExpresionButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <alignmentX value="0.0"/>
+          <horizontalAlignment value="0"/>
+          <text value="Validar Expresion"/>
+          <verifyInputWhenFocusTarget value="true"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
