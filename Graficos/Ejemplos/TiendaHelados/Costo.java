@@ -10,9 +10,9 @@ public enum Costo {;
     public static final double ADIC = 15.0;
 
     // costo - sabores.
-    public static final double VAINILLA = 0.00;
+    public static final double VAINILLA = 10.00;
 
-    public static final double CHOCOLATE = 0.00;
+    public static final double CHOCOLATE = 40.00;
 
     public static final double FRUTILLA = 50.00;
 
@@ -26,7 +26,7 @@ public enum Costo {;
     public static final double PAPEL = 0.00;
 
     // costo - tamaño
-    public static final double PEQUEÑO = 7.99;
+    public static final double PEQUENIO = 7.99;
 
     public static final double MED = 9.99;
 

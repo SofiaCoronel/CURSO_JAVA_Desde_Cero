@@ -20,7 +20,7 @@ public class Acceso_Ficheros {
                 String[] archivos_subcarpeta = f.list();
 
                 for (int j=0; j < archivos_subcarpeta.length; j++){
-                    System.out.println(archivos_subcarpeta[j]);     // imprime lo que hay dentro del directorio
+                    System.out.println(archivos_subcarpeta[j]);     // imprime lo que hay dentro de las subcarpetas
                 }
             }
         }

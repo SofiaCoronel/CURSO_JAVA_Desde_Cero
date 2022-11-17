@@ -220,12 +220,12 @@ class ColaBusquedaAnchura {
 
     private NodoColaRecorridoAnchura primero;
     private NodoColaRecorridoAnchura ultimo;
-    private int tamaño;
+    private int tamanio;
 
     public ColaBusquedaAnchura() {
         this.primero = null;
         this.ultimo = null;
-        this.tamaño = 0;
+        this.tamanio = 0;
     }
 
     public boolean vacia() {
@@ -246,7 +246,7 @@ class ColaBusquedaAnchura {
             this.ultimo = nuevo;
         }
 
-        this.tamaño++;
+        this.tamanio++;
     }
 
     //// dequeue
@@ -261,7 +261,7 @@ class ColaBusquedaAnchura {
             NodoABinario aux = this.primero.valor;
 
             this.primero = this.primero.siguiente;
-            this.tamaño--;
+            this.tamanio--;
 
             return aux;
         }

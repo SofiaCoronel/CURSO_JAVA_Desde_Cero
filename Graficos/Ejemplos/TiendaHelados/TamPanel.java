@@ -25,7 +25,7 @@ public class TamPanel extends JPanel {
     private final JComboBox miTam_C;
 
     // lista de opciones para la seleccion de tamaños.
-    private final String[] miListaTamaño =
+    private final String[] miListaTamanio =
             {"N°1 (12 cm)", "N°2 (15 cm)", "N°3 (18 cm)"};
 
 
@@ -38,7 +38,7 @@ public class TamPanel extends JPanel {
         miTexto = "Tamaño del HELADO:";
         miEtiqueta = new JLabel(miTexto);
 
-        miTam_C = new JComboBox(miListaTamaño);
+        miTam_C = new JComboBox(miListaTamanio);
         miTam_C.setSelectedIndex(1);
 
         addButtons();

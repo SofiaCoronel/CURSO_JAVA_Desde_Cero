@@ -165,7 +165,7 @@ public class FrameTiendaHelados extends JFrame {
             } else if (fuente == miPanelL.getSizesSelection()) {
                 final String size = (String) miPanelL.getSizesSelection().getSelectedItem();
                 if (size.equals("N°1 (12 cm)")) {
-                    miCostoTamanio = Costo.PEQUEÑO;
+                    miCostoTamanio = Costo.PEQUENIO;
                     miSeleccionTamanio = Opciones.N_1;
                 } else if (size.equals("N°2 (15 cm)")) {
                     miCostoTamanio = Costo.MED;

@@ -18,7 +18,7 @@ public enum Opciones {;
             = String.format(MI_FORMATO, "N°1 (12 cm):                           ", Costo.MED);
 
     public static final String N_2
-            = String.format(MI_FORMATO, "N°2 (15 cm):                           ", Costo.PEQUEÑO);
+            = String.format(MI_FORMATO, "N°2 (15 cm):                           ", Costo.PEQUENIO);
 
     public static final String N_3
             = String.format(MI_FORMATO, "N°3 (18 cm):                           ", Costo.GRANDE);

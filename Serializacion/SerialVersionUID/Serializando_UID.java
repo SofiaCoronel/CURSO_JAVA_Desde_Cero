@@ -21,7 +21,7 @@ public class Serializando_UID {
             escribiendo_fichero.writeObject(personal);
             escribiendo_fichero.close();
 
-            // recuperamos el objeto que llevamos al disco
+            // recuperamos el objeto que llevamos al disco - DESERIALIZAMOS el obj.
             ObjectInputStream recuperando_fichero = new ObjectInputStream(new FileInputStream("C://Excepciones//empleado.dat"));
             Empleado_UID[] personal_recuperado = (Empleado_UID[]) recuperando_fichero.readObject();  // almacenamos dentro de un array lo que hay en el fichero
             recuperando_fichero.close();

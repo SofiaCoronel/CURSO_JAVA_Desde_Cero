@@ -20,7 +20,7 @@ public class Serializando {
             escribiendo_fichero.writeObject(personal);
             escribiendo_fichero.close();
 
-            // recuperamos el objeto que llevamos al disco
+            // recuperamos el objeto que llevamos al disco - DESERIALIZAMOS el obj.
             ObjectInputStream recuperando_fichero = new ObjectInputStream(new FileInputStream("C://Excepciones//empleado.dat"));
             Empleado[] personal_recuperado = (Empleado[]) recuperando_fichero.readObject();  // almacenamos dentro de un array lo que hay en el fichero
             recuperando_fichero.close();

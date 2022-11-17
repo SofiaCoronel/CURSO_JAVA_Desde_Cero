@@ -4,12 +4,12 @@ import java.io.*;
 public class Creando {
     public static void main(String[] args) {
 
-        // creamos una nueva carpeta en el directorio
+        // creamos una NUEVA CARPETA en el directorio
         File ruta = new File("C:" + File.separator + "Excepciones" + File.separator + "nuevo_directorio");
         ruta.mkdir();
 
-        // creamos un nuevo archivo
-        File ruta2 = new File("C:" + File.separator + "Excepciones" + File.separator + "prueba_texto.txt");
+        // creamos un nuevo ARCHIVO
+        File ruta2 = new File("C:" + File.separator + "Excepciones" + File.separator + "nuevo_directorio" + File.separator + "prueba_texto.txt");
 
         String archivo_destino = ruta2.getAbsolutePath();   // almacenamos la ruta de la carpeta
 
@@ -26,7 +26,7 @@ public class Creando {
     }
 }
 
-// creamos un nuevo archivo y escribimos en su interior
+// creamos un NUEVO ARCHIVO y escribimos en su interior
 class Escribiendo{
 
     public void escribir(String ruta_archivo){
@@ -34,13 +34,13 @@ class Escribiendo{
 
         try {
 
-            FileWriter escritura = new FileWriter(ruta_archivo);   // vamos a escrbir en el archivo que le estamos indicando
+            FileWriter escritura = new FileWriter(ruta_archivo, true);   // vamos a escrbir en el archivo que le estamos indicando
 
             for (int i=0; i < frase.length(); i++){
 
                 escritura.write(frase.charAt(i));
             }
-            escritura.close();
+            escritura.close();  // cerramos el flujo
 
         }catch (IOException e){
 
