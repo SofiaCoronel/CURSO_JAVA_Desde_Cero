@@ -87,12 +87,13 @@ public class Main {
             for (Cliente e : personal_recuperado){   // leemos el array
                 System.out.println(e.imprimirInformacion());
             }
-        }catch (IOException e){
+            }catch (IOException e){
                 e.printStackTrace();
             }
-        catch (ClassNotFoundException e){
-            e.printStackTrace();
-        }catch (ClassCastException e){
+            catch (ClassNotFoundException e){
+                e.printStackTrace();
+            }
+            catch (ClassCastException e){
                 e.printStackTrace();
             }
     }
