@@ -1,3 +1,5 @@
+package parciallab2.src;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,7 +23,6 @@ public class Admin_contacto {
             System.out.println("nombre: ");
             String nombre = leer.nextLine();
 
-
             System.out.println("apellido: ");
             String apellido = leer.nextLine();
 
@@ -30,6 +31,8 @@ public class Admin_contacto {
 
             System.out.println("telefono: ");
             String telefono = leer.nextLine();
+
+            leer.nextLine();
 
             System.out.println("email: ");
             String email = leer.nextLine();

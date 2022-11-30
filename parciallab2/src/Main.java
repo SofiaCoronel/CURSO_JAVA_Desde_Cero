@@ -1,3 +1,5 @@
+package parciallab2.src;
+
 import java.io.*;
 import java.util.Scanner;
 

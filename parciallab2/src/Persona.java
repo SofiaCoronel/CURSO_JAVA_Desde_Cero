@@ -1,3 +1,4 @@
+package parciallab2.src;
 public abstract class Persona {
     private String nombre, apellido, telefono,email;
     private int dni;

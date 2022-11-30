@@ -1,6 +1,5 @@
 package ClasePracticaSegundoParcialLab2.Cliente;
 
-import java.io.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,32 +7,45 @@ import java.util.Scanner;
 public class Cliente extends Persona implements Informe, Serializable {
     private static final long serialVersionUID = 1L;
 
-    private ArrayList<Activo> activos;
+    private ArrayList<Double> activos;
 
     public Cliente(String nombre, String apellido, String direccion, int dni) {
         super(nombre, apellido, direccion, dni);
-        this.activos = new ArrayList<>();
+        this.activos = new ArrayList<Double>();
     }
 
     // agregamos un activo a la coleccion
-    public void addActivo(Activo activo){
+    public void addActivo(double activo){
         this.activos.add(activo);
     }
 
     // buscamos los activos por el nombre
-    public Activo getActivo(String nombre){
-        for (Activo activo : activos){
-            if (activo.getNombre().equals(nombre)){
+    public Double getActivo(String nombre){
+        for (Double activo : activos){
+            if (activo.){
                 return activo;
             }
         }
         return null;
     }
+    public Activo agregarActivo(){
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Nombre: ");
+        String nombreActivo = leer.nextLine();
+        System.out.println("Monto: ");
+        double montoActivo = leer.nextDouble();
 
+        for (Double activo : activos){
+            if (getActivo(getNombre()).equals(nombreActivo)){
+                cliente.addActivo(montoActivo);
+            }
+        }
+        return null;
+    }
     // implementamos la interfaz INFORME
     @Override
     public String imprimirInformacion(){
-        return "Cliente " +
+        return "Cliente\n" +
                 "Nombre: " + super.getNombre() + "\n" +
                 "Apellido: " + super.getApellido() + "\n" +
                 "Direccion: " + super.getDireccion() + "\n" +
@@ -84,10 +96,15 @@ class Admin_Clientes implements Serializable{
 
     // imprimimos la informacion de los clientes
     public void listarClientes(){
-        for (Cliente cliente1 : clientes){
-            System.out.println(cliente1.imprimirInformacion());
-        }
+
+            if (clientes.size() == 0) {
+                System.out.println("No hay clientes");
+            }
+            for (Cliente cliente1 : clientes) {
+                System.out.println(cliente1.imprimirInformacion());
+            }
     }
+
 
     // bucamos a cliente
     public void buscarCliente(){
@@ -110,14 +127,17 @@ class Admin_Clientes implements Serializable{
         String nombreCliente1 = leer.nextLine();
         for (Cliente cliente1 : clientes) {
             if (cliente1.getNombre().equals(nombreCliente1)) {
+                clientes.remove(cliente1);
                 System.out.println("Cliente eliminado");
             }else {
                     System.out.println("No se puede borrar ya que no existe el cliente");
-                }
-                break;
             }
+            break;
         }
     }
+
+
+}
 
 
 class Activo implements Serializable{

@@ -1,3 +1,5 @@
+package parciallab2.src;
+
 public class Contacto extends Persona implements Impresion {
 
     public Contacto(String nombre, String apellido, String telefono, String email, int dni) {
